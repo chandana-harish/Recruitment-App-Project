@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  frontend:
+    image: chandu554/recruitment:v1.1.0
+    container_name: Recruitment-app
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI: 'mongodb://mongodb-cont:27017/AFF-Docker'
+    depends_on:
+      - backend
+    networks:
+      - R-network
+    
+  backend:
+    image: mongo
+    container_name: mongodb-cont
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - R-network
+  volumes:
+    mongo_data
+  networks:
+    R-network
