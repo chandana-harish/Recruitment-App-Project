@@ -4,7 +4,7 @@ metadata:
   name: recruitment-config
   namespace: chandana-ns
 data:
-  MONGO_URI: "mongodb://rootuser:rootpassword@mongodb-service:27017/hr_system?authSource=admin"
+  MONGO_URI: "mongodb://rootuser:rootpassword@mongo-service:27017/hr_system?authSource=admin"
   MONGO_INITDB_ROOT_USERNAME: "rootuser"
   MONGO_INITDB_ROOT_PASSWORD: "rootpassword"
 
