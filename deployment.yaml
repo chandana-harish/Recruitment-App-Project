@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: C
+  name: rec-deployment
   namespace: chandana-ns
 spec: 
   replicas: 1
