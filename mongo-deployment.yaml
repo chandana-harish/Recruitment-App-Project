@@ -31,7 +31,7 @@ metadata:
   namespace: chandana-ns
 spec:
   selector:
-    app: rec-app
+    apps: rec-apps
   ports:
   - port: 3004
     targetPort: 27017
