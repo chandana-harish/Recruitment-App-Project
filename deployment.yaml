@@ -7,20 +7,20 @@ spec:
   replicas: 1
   selector:
     matchLabels: 
-      app: rec-app
+      app: rec
   template:
     metadata:
       labels: 
-        app: rec-app
+        app: rec
     spec: 
       containers:
-        - name: rec-container
-          image: nimeshsv814/recruitment-app:v1.1.1
-          ports: 
-          - containerPort: 3000
-          envFrom:
-            - configMapRef:
-                name: recruitment-config
+      - name: rec-container
+        image: nimeshsv814/recruitment-app:v1.1.1
+        ports: 
+        - containerPort: 3000
+        envFrom:
+          - configMapRef:
+              name: recruitment-config
  
 
 ---
