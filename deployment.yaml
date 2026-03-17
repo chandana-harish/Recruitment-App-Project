@@ -12,15 +12,15 @@ spec:
     metadata:
       labels: 
         app: rec-app
-  spec: 
-    containers:
-      - name: rec-container
-        image: nimeshsv814/recruitment-app:v1.1.1
-        ports: 
-        - containerPort: 3000
-        envFrom:
-          - configMapRef:
-              name: recruitment-config
+    spec: 
+      containers:
+        - name: rec-container
+          image: nimeshsv814/recruitment-app:v1.1.1
+          ports: 
+          - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: recruitment-config
  
 
 ---
@@ -28,6 +28,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: rec-service
+  namespace: chandana-ns
 spec:
   selector:
     app: rec-app
@@ -62,15 +63,15 @@ spec:
     metadata:
       labels:
         apps: rec-apps
-  spec:
-    containers:
-      - name: mongo-container
-        image: mongo
-        ports:
-        - containerPort: 27017
-        envFrom:
-          - configMapRef:
-              name: recruitment-Configmap
+    spec:
+      containers:
+        - name: mongo-container
+          image: mongo
+          ports:
+          - containerPort: 27017
+          envFrom:
+            - configMapRef:
+                name: recruitment-Configmap
 
 
 ---
@@ -78,6 +79,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mongo-service
+  namespace: chandana-ns
 spec:
   selector:
     app: rec-app
