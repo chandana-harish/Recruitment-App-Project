@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: Recruitment-Deployment
+  name: recruitment-deployment
   namespace: chandana-ns
 spec: 
   replicas: 1
@@ -40,7 +40,7 @@ spec:
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: recruitment-Configmap
+  name: recruitment-configmap
   namespace: chandana-ns
 data:
   MONGO_URI: "mongodb://rootuser:root123@mongodb-service:27017/hr_system?authSource=admin"
