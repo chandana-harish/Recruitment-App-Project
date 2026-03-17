@@ -5,7 +5,7 @@ metadata:
   namespace: chandana-ns
 type: Opaque
 stringData:
-  MONGO_URI: "mongodb://rootuser:rootpassword@mongo-service:27017/hr_system?authSource=admin"
+  url: "mongodb://rootuser:rootpassword@mongo-service:27017/hr_system?authSource=admin"
   username: "rootuser"
   password: "rootpassword"
 
