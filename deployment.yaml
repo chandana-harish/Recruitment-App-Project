@@ -71,7 +71,7 @@ spec:
           - containerPort: 27017
           envFrom:
             - configMapRef:
-                name: recruitment-Configmap
+                name: recruitment-configmap
 
 
 ---
