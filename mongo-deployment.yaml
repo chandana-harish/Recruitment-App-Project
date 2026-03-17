@@ -1,41 +1,42 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  name: recruitment-deployment
+metadata:
+  name: mongodb
   namespace: chandana-ns
-spec: 
+spec:
   replicas: 1
   selector:
-    matchLabels: 
-      app: rec-app
+    matchLabels:
+      apps: rec-apps
   template:
     metadata:
-      labels: 
-        app: rec-app
-    spec: 
+      labels:
+        apps: rec-apps
+    spec:
       containers:
-        - name: rec-container
-          image: nimeshsv814/recruitment-app:v1.1.1
-          ports: 
-          - containerPort: 3000
+        - name: mongo-container
+          image: mongo
+          ports:
+          - containerPort: 27017
           envFrom:
             - configMapRef:
-                name: recruitment-config
- 
+                name: recruitment-configmap
+
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: rec-service
+  name: mongo-service
   namespace: chandana-ns
 spec:
   selector:
     app: rec-app
   ports:
-  - port: 3001
-    targetPort: 3000
+  - port: 3004
+    targetPort: 27017
   type: NodePort
+
 
 ---
 apiVersion: v1
@@ -47,6 +48,3 @@ data:
   MONGO_URI: "mongodb://rootuser:root123@mongodb-service:27017/hr_system?authSource=admin"
   MONGO_INITDB_ROOT_USERNAME: "rootuser"
   MONGO_INITDB_ROOT_PASSWORD: "root123"
-
-
-
