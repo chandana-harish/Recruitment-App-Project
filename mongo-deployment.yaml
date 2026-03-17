@@ -12,7 +12,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodb-deployment
+  name: mongodb
   namespace: chandana-ns
 spec:
   replicas: 1
@@ -31,7 +31,7 @@ spec:
           - containerPort: 27017
           envFrom:
             - configMapRef:
-                name: recruitment-configmap
+                name: recruitment-config
 
 
 ---
@@ -44,9 +44,9 @@ spec:
   selector:
     apps: rec-app
   ports:
-  - port: 3004
+  - port: 27017
     targetPort: 27017
-  type: NodePort
+  type: ClusterIP
 
 
 # ---

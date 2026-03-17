@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: recruitment-deployment
+  name: recruitment-app
   namespace: chandana-ns
 spec: 
   replicas: 1
@@ -20,7 +20,7 @@ spec:
         - containerPort: 3000
         envFrom:
           - configMapRef:
-              name: recruitment-configmap
+              name: recruitment-config
  
 
 ---
@@ -33,7 +33,7 @@ spec:
   selector:
     app: rec
   ports:
-  - port: 3001
+  - port: 3000
     targetPort: 3000
   type: NodePort
 
