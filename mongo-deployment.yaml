@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      apps: rec-apps
+      apps: rec-app
   template:
     metadata:
       labels:
-        apps: rec-apps
+        apps: rec-app
     spec:
       containers:
         - name: mongo-container
@@ -31,7 +31,7 @@ metadata:
   namespace: chandana-ns
 spec:
   selector:
-    apps: rec-apps
+    apps: rec-app
   ports:
   - port: 3004
     targetPort: 27017
