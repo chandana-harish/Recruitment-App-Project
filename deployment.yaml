@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: recruitment-app
+  name: C
   namespace: chandana-ns
 spec: 
   replicas: 1

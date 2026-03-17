@@ -6,7 +6,7 @@ metadata:
 data:
   MONGO_URI: "mongodb://rootuser:root123@mongodb-service:27017/hr_system?authSource=admin"
   MONGO_INITDB_ROOT_USERNAME: "rootuser"
-  MONGO_INITDB_ROOT_PASSWORD: "root123"
+  MONGO_INITDB_ROOT_PASSWORD: "rootpassword"
 
 ---
 apiVersion: apps/v1
